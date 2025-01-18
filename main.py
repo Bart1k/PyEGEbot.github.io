@@ -52,7 +52,7 @@ def callback_query(call):
     if call.data == 'faq':
         reply_keyboard = types.ReplyKeyboardMarkup(True, True)
         reply_keyboard.add(types.KeyboardButton('💡 О Python'))
-        reply_keyboard.add(types.KeyboardButton('📖 Рекомендации о учебе'))
+        reply_keyboard.add(types.KeyboardButton('📖 Рекомендации по учебе'))
 
         bot.send_message(call.message.chat.id, 'Выберите нужный вопрос:', reply_markup=reply_keyboard)
 
@@ -65,7 +65,7 @@ def callback_query(call):
         bot.send_message(call.message.chat.id, about_python_message)
     
     
-    elif call.data == 'Рекомендации о учебе':
+    elif call.data == '📖 Рекомендации по учебе':
         studying_recommendations_message = ('Вот несколько советов по изучению Python:\n'
                                              '1. 📚 Если Вы в 10 классе, изучайте постепенно, но если в 11, '
                                              'занимайтесь каждый день (минимум час).\n'
@@ -231,7 +231,7 @@ def callback_query(call):
     
     elif call.data == 'resources':
         resources_message = ('📚 Вот некоторые ресурсы для изучения Python и подготовки к ЕГЭ:\n'
-                             '- Официальная документация: https://docs.python.org/3/\n'
+                             '- Официальная документация(на английском): https://docs.python.org/3/\n'
                              '- Планета Информатики: https://inf1.info/\n'
                              '- Приложение CodeBase: https://www.rustore.ru/catalog/app/com.avelycure.whoareyoumobile.developer\n'
                              '- Информатикс: https://informatics.msk.ru/')
@@ -280,10 +280,10 @@ def callback_query(call):
 @bot.message_handler(func=lambda message: message.text == '🔤 Работа со строками')
 def string_operations(message):
     bot.send_message(message.chat.id, 'Работа со строками включает операции, такие как:\n'
-                                       '- Извлечение подстрок. Статья: https://www.geeksforgeeks.org/extract-substrings-from-a-list-into-a-list-in-python/\n'
+                                       '- Извлечение подстрок. Статья(на английском): https://www.geeksforgeeks.org/extract-substrings-from-a-list-into-a-list-in-python/\n'
                                        '- Конкатенация строк. Статья: https://timeweb.com/ru/community/articles/konkatenaciya-strok-python\n'
                                        '- Сравнение строк. Статья: https://pythonist.ru/sravnenie-strok-v-python/\n'
-                                       '- Изменение регистра. Статья: https://www.geeksforgeeks.org/isupper-islower-lower-upper-python-applications/\n'
+                                       '- Изменение регистра. Статья(на английском): https://www.geeksforgeeks.org/isupper-islower-lower-upper-python-applications/\n'
                                        '❗ Это основа работы с текстовыми данными в Python.')
 
 
@@ -292,8 +292,7 @@ def list_operations(message):
     bot.send_message(message.chat.id, 'Списки и массивы в Python позволяют хранить коллекции объектов:\n'
                                        '- Создание списков. Статья: https://skillbox.ru/media/code/spiski-v-python-chto-eto-takoe-i-kak-s-nimi-rabotat/\n'
                                        '- Добавление и удаление элементов. Статья: https://habr.com/ru/articles/319876/\n'
-                                       '- Индексация. Статья: https://habr.com/ru/articles/811247/\n'
-                                       '- Сортировка и фильтрация. Статья: https://stackoverflow.com/questions/72450566/how-to-sort-and-filter-a-list-in-python\n'
+                                       '- Сортировка и фильтрация. Статья(на английском): https://stackoverflow.com/questions/72450566/how-to-sort-and-filter-a-list-in-python\n'
                                        '📈 Использование списков позволяет эффективно обрабатывать данные.')
 
 @bot.message_handler(func=lambda message: message.text == '⚖ Условные конструкции')
@@ -366,7 +365,7 @@ def conditional_statements(message):
                                        'машинном обучении и Data Science.\n'
                                        '🔗 Дополнительную информацию можно найти на официальном сайте: https://www.python.org/')
     
-@bot.message_handler(func=lambda message: message.text == '📖 Рекомендации о учебе')
+@bot.message_handler(func=lambda message: message.text == '📖 Рекомендации по учебе')
 def conditional_statements(message):
     bot.send_message(message.chat.id, 'Вот несколько советов по изучению Python:\n'
                                        '1. 📚 Если Вы в 10 классе, изучайте постепенно, но если в 11, '
