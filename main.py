@@ -139,12 +139,11 @@ def callback_query(call):
 
         row3 = [
             types.InlineKeyboardButton('📄 Задание №17', callback_data='Задание №17'),
-            types.InlineKeyboardButton('📄 Задание №22', callback_data='Задание №22'),
-            types.InlineKeyboardButton('📄 Задание №23', callback_data='Задание №23'),
+            types.InlineKeyboardButton('📄 Задание №22', callback_data='Задание №23'),
+            types.InlineKeyboardButton('📄 Задание №23', callback_data='Задание №24'),
         ]
 
         row4 = [
-            types.InlineKeyboardButton('📄 Задание №24', callback_data='Задание №24'),
             types.InlineKeyboardButton('📄 Задание №25', callback_data='Задание №25'),
             types.InlineKeyboardButton('📄 Задание №26', callback_data='Задание №26'),
             types.InlineKeyboardButton('📄 Задание №27', callback_data='Задание №27'),
@@ -158,69 +157,77 @@ def callback_query(call):
         bot.send_message(call.message.chat.id, 'Выберите нужное задание:', reply_markup=keyboard)
 
     elif call.data == 'Задание №2':
+        bot.send_message(call.message.chat.id, 'Пример кода для номера 2:')
         with open('photos/number2.png', 'rb') as photo_1:
             bot.send_photo(call.message.chat.id, photo_1)
-        bot.send_message(call.message.chat.id, 'Пример кода для номера 2:')
+        bot.send_message(call.message.chat.id, '🔗 Ссылка на теорию: https://yandex.ru/video/preview/13098142284349370274 . Ссылка на практику: https://kompege.ru/task')
 
     elif call.data == 'Задание №6':
+        bot.send_message(call.message.chat.id, 'Пример кода для номера 6:')
         with open('photos/number6.png', 'rb') as photo_2:
             bot.send_photo(call.message.chat.id, photo_2)
-        bot.send_message(call.message.chat.id, 'Пример кода для номера 6:')
+        bot.send_message(call.message.chat.id, '🔗 Ссылка на теорию: https://www.youtube.com/watch?v=IBx7yXLKsgM . Ссылка на практику: https://kompege.ru/task')
 
     elif call.data == 'Задание №12':
+        bot.send_message(call.message.chat.id, 'Пример кода для номера 12:')
         with open('photos/number12.png', 'rb') as photo_3:
             bot.send_photo(call.message.chat.id, photo_3)
-        bot.send_message(call.message.chat.id, 'Пример кода для номера 12:')
+        bot.send_message(call.message.chat.id, '🔗 Ссылка на теорию: https://rutube.ru/video/312a25d4fa841c36bb3dbaa299147c7b/ . Ссылка на практику: https://kompege.ru/task')
 
     elif call.data == 'Задание №14':
+        bot.send_message(call.message.chat.id, 'Пример кода для номера 14:')
         with open('photos/number14.png', 'rb') as photo_4:
             bot.send_photo(call.message.chat.id, photo_4)
-        bot.send_message(call.message.chat.id, 'Пример кода для номера 14:')
+        bot.send_message(call.message.chat.id, '🔗 Ссылка на теорию: https://rutube.ru/video/e56a69d201087452f1b605bb0ae5cb74/ . Ссылка на практику: https://kompege.ru/task')
 
     elif call.data == 'Задание №15':
+        bot.send_message(call.message.chat.id, 'Пример кода для номера 15:')
         with open('photos/number15.png', 'rb') as photo_5:
             bot.send_photo(call.message.chat.id, photo_5)
-        bot.send_message(call.message.chat.id, 'Пример кода для номера 15:')
+        bot.send_message(call.message.chat.id, '🔗 Ссылка на теорию: https://rutube.ru/video/fd7c6850320fed09d9102f182f868335/ . Ссылка на практику: https://kompege.ru/task')
 
     elif call.data == 'Задание №16':
+        bot.send_message(call.message.chat.id, 'Пример кода для номера 16:')
         with open('photos/number16.png', 'rb') as photo_6:
             bot.send_photo(call.message.chat.id, photo_6)
-        bot.send_message(call.message.chat.id, 'Пример кода для номера 16:')
+        bot.send_message(call.message.chat.id, '🔗 Ссылка на теорию: https://rutube.ru/video/70b363a6db2e5e08b37ab47f5b497da8/ . Ссылка на практику: https://kompege.ru/task')
 
     elif call.data == 'Задание №17':
+        bot.send_message(call.message.chat.id, 'Пример кода для номера 17:')
         with open('photos/number17.png', 'rb') as photo_7:
             bot.send_photo(call.message.chat.id, photo_7)
-        bot.send_message(call.message.chat.id, 'Пример кода для номера 17:')
+        bot.send_message(call.message.chat.id, '🔗 Ссылка на теорию: https://rutube.ru/video/bf40562cf6954078b9a31dc4a043ed78/ . Ссылка на практику: https://kompege.ru/task')
 
-    elif call.data == 'Задание №22':
-        with open('photos/number22.png', 'rb') as photo_8:
-            bot.send_photo(call.message.chat.id, photo_8)
-        bot.send_message(call.message.chat.id, 'Пример кода для номера 22:')
 
     elif call.data == 'Задание №23':
+        bot.send_message(call.message.chat.id, 'Пример кода для номера 23:')
         with open('photos/number23.png', 'rb') as photo_9:
             bot.send_photo(call.message.chat.id, photo_9)
-        bot.send_message(call.message.chat.id, 'Пример кода для номера 23:')
+        bot.send_message(call.message.chat.id, '🔗 Ссылка на теорию: https://rutube.ru/video/a48af7fbd65acbddf3aaa831177a8797/ . Ссылка на практику: https://kompege.ru/task')
 
     elif call.data == 'Задание №24':
+        bot.send_message(call.message.chat.id, 'Пример кода для номера 24:')
         with open('photos/number24.png', 'rb') as photo_10:
             bot.send_photo(call.message.chat.id, photo_10)
-        bot.send_message(call.message.chat.id, 'Пример кода для номера 24:')
+        bot.send_message(call.message.chat.id, '🔗 Ссылка на теорию: https://rutube.ru/video/9bbffde80d913f50196e5142b4067ca2/ . Ссылка на практику: https://kompege.ru/task')
 
     elif call.data == 'Задание №25':
+        bot.send_message(call.message.chat.id, 'Пример кода для номера 25:')
         with open('photos/number25.png', 'rb') as photo_11:
             bot.send_photo(call.message.chat.id, photo_11)
-        bot.send_message(call.message.chat.id, 'Пример кода для номера 25:')
+        bot.send_message(call.message.chat.id, '🔗 Ссылка на теорию: https://vk.com/video-205865487_456239727 . Ссылка на практику: https://kompege.ru/task')
 
     elif call.data == 'Задание №26':
+        bot.send_message(call.message.chat.id, 'Пример кода для номера 26:')
         with open('photos/number26.png', 'rb') as photo_12:
             bot.send_photo(call.message.chat.id, photo_12)
-        bot.send_message(call.message.chat.id, 'Пример кода для номера 26:')
+        bot.send_message(call.message.chat.id, '🔗 Ссылка на теорию: https://vk.com/video-205865487_456239730 . Ссылка на практику: https://kompege.ru/task')
 
     elif call.data == 'Задание №27':
+        bot.send_message(call.message.chat.id, 'Пример кода для номера 27:')
         with open('photos/number27.png', 'rb') as photo_13:
             bot.send_photo(call.message.chat.id, photo_13)
-        bot.send_message(call.message.chat.id, 'Пример кода для номера 27:')
+        bot.send_message(call.message.chat.id, '🔗 Ссылка на теорию: https://yandex.ru/video/preview/1921353132544488374 . Ссылка на практику: https://kompege.ru/task')
     
     elif call.data == 'resources':
         resources_message = ('📚 Вот некоторые ресурсы для изучения Python и подготовки к ЕГЭ:\n'
@@ -333,23 +340,23 @@ def practice(message):
 @bot.message_handler(commands=['daily_task'])
 def daily_task(message):
     tasks = [
-        '📝 Задание №2. Построение таблиц истинности логических выражений.',
-        '📝 Задание №6. Анализ программ.',
-        '📝 Задание №12. Выполнение алгоритмов для исполнителей.',
-        '📝 Задание №14. Системы счисления.',
-        '📝 Задание №15. Преобразование логических выражений.',
-        '📝 Задание №16. Рекурсивные алгоритмы.',
-        '📝 Задание №17. Проверка на делимость.',
-        '📝 Задание №22. Анализ программ с циклом и условными операторами.',
-        '📝 Задание №23. Оператор присваивания и ветвления. Перебор вариантов, построение дерева.',
-        '📝 Задание №24. Обработка символьных строк.',
-        '📝 Задание №25. Обработка целочисленной информации.',
-        '📝 Задание №26. Сортировка.',
-        '📝 Задание №27. Анализ числовых последовательностей.',
+        '📝 Задание №2. Построение таблиц истинности логических выражений : https://kompege.ru/task',
+        '📝 Задание №6. Анализ программ :',
+        '📝 Задание №12. Выполнение алгоритмов для исполнителей : https://kompege.ru/task',
+        '📝 Задание №14. Системы счисления :',
+        '📝 Задание №15. Преобразование логических выражений : https://kompege.ru/task',
+        '📝 Задание №16. Рекурсивные алгоритмы : https://kompege.ru/task',
+        '📝 Задание №17. Проверка на делимость : https://kompege.ru/task',
+        '📝 Задание №23. Оператор присваивания и ветвления. Перебор вариантов, построение дерева : https://kompege.ru/task',
+        '📝 Задание №24. Обработка символьных строк : https://kompege.ru/task',
+        '📝 Задание №25. Обработка целочисленной информации : https://kompege.ru/task',
+        '📝 Задание №26. Сортировка : https://kompege.ru/task',
+        '📝 Задание №27. Анализ числовых последовательностей: https://kompege.ru/task',
         '🎉 Сегодня можно отдохнуть:)'
     ]
     task = random.choice(tasks)
     bot.send_message(message.chat.id, f'Ваше задание на сегодня: {task}')
+    
 
 @bot.message_handler(func=lambda message: message.text == '💡 О Python')
 def conditional_statements(message):
@@ -426,12 +433,11 @@ def callback_handler(call):
 
         row3 = [
             types.InlineKeyboardButton('📄 Задание №17', callback_data='Задание №17'),
-            types.InlineKeyboardButton('📄 Задание №22', callback_data='Задание №22'),
-            types.InlineKeyboardButton('📄 Задание №23', callback_data='Задание №23'),
+            types.InlineKeyboardButton('📄 Задание №23', callback_data='Задание №22'),
+            types.InlineKeyboardButton('📄 Задание №24', callback_data='Задание №23'),
         ]
 
         row4 = [
-            types.InlineKeyboardButton('📄 Задание №24', callback_data='Задание №24'),
             types.InlineKeyboardButton('📄 Задание №25', callback_data='Задание №25'),
             types.InlineKeyboardButton('📄 Задание №26', callback_data='Задание №26'),
             types.InlineKeyboardButton('📄 Задание №27', callback_data='Задание №27'),
