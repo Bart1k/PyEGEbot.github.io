@@ -597,32 +597,29 @@ def send_question(chat_id):
                 if os.path.exists(question['text_file_path']):
                     send_document(chat_id, question['text_file_path'])
 
-        markup = types.InlineKeyboardMarkup()
+        markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
         for option in question['options']:
-            button = types.InlineKeyboardButton(option, callback_data=option)
-            markup.add(button)
+            markup.add(option)
         send_message(chat_id, "🤔 Выберите ответ:", reply_markup=markup)
     else:
         send_message(chat_id, "🏁 Квиз завершен! Ты мегахорош, продолжай в том же духе:), нажимай /start, чтоб выбрать другую опцию!")
         current_question = 0
 
-@bot.callback_query_handler(func=lambda call: True)
-def handle_answer(call):
+
+@bot.message_handler(func=lambda message: True)
+def handle_answer(message):
     global current_question
     question = questions[current_question]
-    
-    # Проверяем, правильный ли ответ или нет
-    if call.data in question['options']:
-        if call.data == question['answer']:
-            send_message(call.message.chat.id, "✅ Правильно!")
+    if message.text in question['options']:
+        if message.text == question['answer']:
+            send_message(message.chat.id, "✅ Правильно!")
+            current_question += 1
+            send_question(message.chat.id)
         else:
-            send_message(call.message.chat.id, "❌ Неправильно!")
-        current_question += 1
-        
-        # Отправляем следующий вопрос
-        send_question(call.message.chat.id)
+            send_message(message.chat.id, "❌ Неправильно!")
+            send_question(message.chat.id)
     else:
-        send_message(call.message.chat.id, "❓ Я не знаю такой функции, нажмите /start!")
+        send_message(message.chat.id, "❓ Я не знаю такой функции, нажмите /start!")
 
 
 feedback_file_path = 'feedback.txt'
