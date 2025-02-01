@@ -18,7 +18,7 @@ def start_comment(message):
     row2 = [
         types.InlineKeyboardButton('❓ Часто задаваемые вопросы', callback_data='faq'),
         types.InlineKeyboardButton('🚀 Почему Python?', callback_data='why python'),
-        types.InlineKeyboardButton('📝 Жалобы и Предложения', callback_data='feedback')
+        types.InlineKeyboardButton('📝 Обратная Связь', callback_data='feedback')
     ]
 
     row3 = [
@@ -126,27 +126,27 @@ def callback_query(call):
         keyboard = types.InlineKeyboardMarkup()
 
         row1 = [
-            types.InlineKeyboardButton('📄 Задание №2', callback_data='Задание №2'),
-            types.InlineKeyboardButton('📄 Задание №6', callback_data='Задание №6'),
-            types.InlineKeyboardButton('📄 Задание №12', callback_data='Задание №12'),
+            types.InlineKeyboardButton('📄 Номер №2', callback_data='Задание №2'),
+            types.InlineKeyboardButton('📄 Номер №6', callback_data='Задание №6'),
+            types.InlineKeyboardButton('📄 Номер №12', callback_data='Задание №12'),
         ]
 
         row2 = [
-            types.InlineKeyboardButton('📄 Задание №14', callback_data='Задание №14'),
-            types.InlineKeyboardButton('📄 Задание №15', callback_data='Задание №15'),
-            types.InlineKeyboardButton('📄 Задание №16', callback_data='Задание №16'),
+            types.InlineKeyboardButton('📄 Номер №14', callback_data='Задание №14'),
+            types.InlineKeyboardButton('📄 Номер №15', callback_data='Задание №15'),
+            types.InlineKeyboardButton('📄 Номер №16', callback_data='Задание №16'),
         ]
 
         row3 = [
-            types.InlineKeyboardButton('📄 Задание №17', callback_data='Задание №17'),
-            types.InlineKeyboardButton('📄 Задание №22', callback_data='Задание №23'),
-            types.InlineKeyboardButton('📄 Задание №23', callback_data='Задание №24'),
+            types.InlineKeyboardButton('📄 Номер №17', callback_data='Задание №17'),
+            types.InlineKeyboardButton('📄 Номер №22', callback_data='Задание №23'),
+            types.InlineKeyboardButton('📄 Номер №23', callback_data='Задание №24'),
         ]
 
         row4 = [
-            types.InlineKeyboardButton('📄 Задание №25', callback_data='Задание №25'),
-            types.InlineKeyboardButton('📄 Задание №26', callback_data='Задание №26'),
-            types.InlineKeyboardButton('📄 Задание №27', callback_data='Задание №27'),
+            types.InlineKeyboardButton('📄 Номер №25', callback_data='Задание №25'),
+            types.InlineKeyboardButton('📄 Номер №26', callback_data='Задание №26'),
+            types.InlineKeyboardButton('📄 Номер №27', callback_data='Задание №27'),
         ]
 
         keyboard.add(*row1)
@@ -166,7 +166,7 @@ def callback_query(call):
         bot.send_message(call.message.chat.id, 'Пример кода для номера 6:')
         with open('photos/number6.png', 'rb') as photo_2:
             bot.send_photo(call.message.chat.id, photo_2)
-        bot.send_message(call.message.chat.id, '🔗 Ссылка на теорию: https://www.youtube.com/watch?v=IBx7yXLKsgM . Ссылка на практику: https://kompege.ru/task')
+        bot.send_message(call.message.chat.id, '🔗 Ссылка на теорию: https://yandex.ru/video/preview/15147465292365161822 . Ссылка на практику: https://kompege.ru/task')
 
     elif call.data == 'Задание №12':
         bot.send_message(call.message.chat.id, 'Пример кода для номера 12:')
@@ -342,7 +342,7 @@ def daily_task(message):
         '📝 Задание №2. Построение таблиц истинности логических выражений : https://kompege.ru/task',
         '📝 Задание №6. Анализ программ :',
         '📝 Задание №12. Выполнение алгоритмов для исполнителей : https://kompege.ru/task',
-        '📝 Задание №14. Системы счисления :',
+        '📝 Задание №14. Системы счисления : https://kompege.ru/task',
         '📝 Задание №15. Преобразование логических выражений : https://kompege.ru/task',
         '📝 Задание №16. Рекурсивные алгоритмы : https://kompege.ru/task',
         '📝 Задание №17. Проверка на делимость : https://kompege.ru/task',
@@ -419,27 +419,27 @@ def callback_handler(call):
         keyboard = types.InlineKeyboardMarkup()
 
         row1 = [
-            types.InlineKeyboardButton('📄 Задание №2', callback_data='Задание №2'),
-            types.InlineKeyboardButton('📄 Задание №6', callback_data='Задание №6'),
-            types.InlineKeyboardButton('📄 Задание №12', callback_data='Задание №12'),
+            types.InlineKeyboardButton('📄 Номер №2', callback_data='Задание №2'),
+            types.InlineKeyboardButton('📄 Номер №6', callback_data='Задание №6'),
+            types.InlineKeyboardButton('📄 Номер №12', callback_data='Задание №12'),
         ]
 
         row2 = [
-            types.InlineKeyboardButton('📄 Задание №14', callback_data='Задание №14'),
-            types.InlineKeyboardButton('📄 Задание №15', callback_data='Задание №15'),
-            types.InlineKeyboardButton('📄 Задание №16', callback_data='Задание №16'),
+            types.InlineKeyboardButton('📄 Номер №14', callback_data='Задание №14'),
+            types.InlineKeyboardButton('📄 Номер №15', callback_data='Задание №15'),
+            types.InlineKeyboardButton('📄 Номер №16', callback_data='Задание №16'),
         ]
 
         row3 = [
-            types.InlineKeyboardButton('📄 Задание №17', callback_data='Задание №17'),
-            types.InlineKeyboardButton('📄 Задание №23', callback_data='Задание №22'),
-            types.InlineKeyboardButton('📄 Задание №24', callback_data='Задание №23'),
+            types.InlineKeyboardButton('📄 Номер №17', callback_data='Задание №17'),
+            types.InlineKeyboardButton('📄 Номер №23', callback_data='Задание №22'),
+            types.InlineKeyboardButton('📄 Номер №24', callback_data='Задание №23'),
         ]
 
         row4 = [
-            types.InlineKeyboardButton('📄 Задание №25', callback_data='Задание №25'),
-            types.InlineKeyboardButton('📄 Задание №26', callback_data='Задание №26'),
-            types.InlineKeyboardButton('📄 Задание №27', callback_data='Задание №27'),
+            types.InlineKeyboardButton('📄 Номер №25', callback_data='Задание №25'),
+            types.InlineKeyboardButton('📄 Номер №26', callback_data='Задание №26'),
+            types.InlineKeyboardButton('📄 Номер №27', callback_data='Задание №27'),
         ]
 
         keyboard.add(*row1)

@@ -3,5 +3,6 @@ RamaZubik: НАДО БОЛЬШЕ ТЕСТОВ!!!
 
 Vicksp1: Почему меню уходит, как его закрепить?
 
-RamaZubik: Gouda
+
+ItsDrakula: Гойду добавь
 
