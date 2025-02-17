@@ -11,30 +11,33 @@ def start_comment(message):
     keyboard = types.InlineKeyboardMarkup()
 
     row1 = [
-        types.InlineKeyboardButton('📥 Скачать приложение', callback_data='download'),
-        types.InlineKeyboardButton('📚 Полезные ресурсы', callback_data='resources')
+        types.InlineKeyboardButton('📥 Скачать Python', callback_data='download'),
+        types.InlineKeyboardButton('📚 Материалы', callback_data='resources')
     ]
 
     row2 = [
-        types.InlineKeyboardButton('❓ Часто задаваемые вопросы', callback_data='faq'),
-        types.InlineKeyboardButton('🚀 Почему Python?', callback_data='why python'),
-        types.InlineKeyboardButton('📝 Обратная Связь', callback_data='feedback')
+        types.InlineKeyboardButton('❓ FAQ', callback_data='faq'),
+        types.InlineKeyboardButton('🏫 Вузы', callback_data='listhigh')
     ]
 
     row3 = [
-        types.InlineKeyboardButton('💻 Сайты для практики', callback_data='practice'),
-        types.InlineKeyboardButton('📄 Примеры кода', callback_data='examples'),
+        types.InlineKeyboardButton('💻 Онлайн-тренажёры', callback_data='practice'),
         types.InlineKeyboardButton('🧠 Тест', callback_data='quiz')
     ]
 
     row4 = [
-        types.InlineKeyboardButton('📅 Ежедневные задания', callback_data='daily_task'),
-        types.InlineKeyboardButton('🌟 Особенные темы', callback_data='special_topics'),
-        types.InlineKeyboardButton('🏫 Список вузов', callback_data='listhigh')
+        types.InlineKeyboardButton('📅 Ежедневник', callback_data='daily_task'),
+        types.InlineKeyboardButton('🌟 Важные темы', callback_data='special_topics'),
     ]
 
     row5 = [
-        types.InlineKeyboardButton('👤 Создатель', callback_data='the_creator')
+        types.InlineKeyboardButton('👤 Создатель', callback_data='the_creator'),
+        types.InlineKeyboardButton('📝 Обратная Связь', callback_data='feedback')
+    ]
+
+    row6 = [
+        types.InlineKeyboardButton('📄 Примеры кода', callback_data='examples'),
+                types.InlineKeyboardButton('🚀 Почему Python?', callback_data='why python')
     ]
 
     keyboard.add(*row1)
@@ -42,6 +45,7 @@ def start_comment(message):
     keyboard.add(*row3)
     keyboard.add(*row4)
     keyboard.add(*row5)
+    keyboard.add(*row6)
 
     bot.send_message(message.chat.id, '👋 Добро пожаловать! Выберите опцию:', reply_markup=keyboard)
 
