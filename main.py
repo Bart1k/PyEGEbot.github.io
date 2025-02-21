@@ -2,6 +2,7 @@ from telebot import TeleBot, types
 import random
 import os
 
+
 bot = TeleBot('7184508258:AAFzvF1R6Owgwwou_6jUD3TP7TrkbWgjZjw')
 
  
@@ -655,12 +656,6 @@ questions = [
         'image_path': 'photos/number23_23.PNG',
         'options': ['34', '28', '48', '36'],
         'answer': '36' 
-    },
-    {
-        'image_path': 'photos/number24_24.PNG',
-        'text_file_path': 'texts/24_17878.txt',
-        'options': ['154', '146', '138', '153'],
-        'answer': '154' 
     },
     {
         'image_path': 'photos/number25_25.PNG',
