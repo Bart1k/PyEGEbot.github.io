@@ -52,7 +52,8 @@ def start_comment(message):
     keyboard.add(*row5)
     keyboard.add(*row6)
 
-    bot.send_message(message.chat.id, '👋 Добро пожаловать! Выберите опцию:', reply_markup=keyboard)
+    bot.send_message(message.chat.id, '👋 Привет! Я бот для подготовки к ЕГЭ по информатике.\n',
+        'Выбери опцию, чтобы начать:', reply_markup=keyboard)
 
 
 
