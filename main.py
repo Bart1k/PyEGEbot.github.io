@@ -652,12 +652,6 @@ questions = [
         'answer': '1214 176024' 
     },
     {
-        'image_path': 'photos/number22_22.PNG',
-        'text_file_path': 'texts/22_17876.xls',
-        'options': ['5', '6', '8', '3'],
-        'answer': '5' 
-    },
-    {
         'image_path': 'photos/number23_23.PNG',
         'options': ['34', '28', '48', '36'],
         'answer': '36' 
@@ -764,7 +758,6 @@ def send_question(chat_id):
                               "🖥️ Задание 15(таймкод - 1:44:00): https://vk.com/video-205865487_456239242\n"
                               "🖥️ Задание 16(таймкод - 1:47:35): https://vk.com/video-205865487_456239242\n"
                               "🖥️ Задание 17(таймкод - 1:50:50): https://vk.com/video-205865487_456239242\n"
-                              "🖥️ Задание 22(таймкод - 2:09:20): https://vk.com/video-205865487_456239242\n"
                               "🖥️ Задание 23(таймкод - 2:24:05): https://vk.com/video-205865487_456239242\n"
                               "🖥️ Задание 24: https://rutube.ru/video/4b79b5333ad048ba11e61dca9cbe47e1/?&utm_source=embed&utm_medium=referral&utm_campaign=logo&utm_content=4b79b5333ad048ba11e61dca9cbe47e1&utm_term=kompege.ru%2F&referrer=appmetrica_tracking_id%3D1037600761300671389%26ym_tracking_id%3D681587340714204735\n"
                               "🖥️ Задание 25(таймкод - 2:32:25): https://vk.com/video-205865487_456239242\n"
