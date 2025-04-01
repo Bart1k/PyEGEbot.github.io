@@ -225,7 +225,7 @@ def callback_query(call):
         
  
         bot.send_message(call.message.chat.id, 'Пример кода для номера 2:')
-        with open('photos/number2.PNG', 'rb') as photo_1:
+        with open('photos/number2.png', 'rb') as photo_1:
             bot.send_photo(call.message.chat.id, photo_1)
 
 
@@ -240,7 +240,7 @@ def callback_query(call):
             
     
             bot.send_message(call.message.chat.id, 'Пример кода для номера 5:')
-            with open('photos/number5.PNG', 'rb') as photo_1:
+            with open('photos/number5.png', 'rb') as photo_1:
                 bot.send_photo(call.message.chat.id, photo_1)
 
 
@@ -254,7 +254,7 @@ def callback_query(call):
             
     
             bot.send_message(call.message.chat.id, 'Пример кода для номера 6:')
-            with open('photos/number6.PNG', 'rb') as photo_1:
+            with open('photos/number6.png', 'rb') as photo_1:
                 bot.send_photo(call.message.chat.id, photo_1)
 
 
@@ -268,7 +268,7 @@ def callback_query(call):
             
     
             bot.send_message(call.message.chat.id, 'Пример кода для номера 12:')
-            with open('photos/number12.PNG', 'rb') as photo_1:
+            with open('photos/number12.png', 'rb') as photo_1:
                 bot.send_photo(call.message.chat.id, photo_1)
 
 
@@ -282,7 +282,7 @@ def callback_query(call):
             
     
             bot.send_message(call.message.chat.id, 'Пример кода для номера 14:')
-            with open('photos/number14.PNG', 'rb') as photo_1:
+            with open('photos/number14.png', 'rb') as photo_1:
                 bot.send_photo(call.message.chat.id, photo_1)
 
 
@@ -296,7 +296,7 @@ def callback_query(call):
             
     
             bot.send_message(call.message.chat.id, 'Пример кода для номера 15:')
-            with open('photos/number15.PNG', 'rb') as photo_1:
+            with open('photos/number15.png', 'rb') as photo_1:
                 bot.send_photo(call.message.chat.id, photo_1)
 
 
@@ -310,7 +310,7 @@ def callback_query(call):
             
     
             bot.send_message(call.message.chat.id, 'Пример кода для номера 16:')
-            with open('photos/number16.PNG', 'rb') as photo_1:
+            with open('photos/number16.png', 'rb') as photo_1:
                 bot.send_photo(call.message.chat.id, photo_1)
 
 
@@ -324,7 +324,7 @@ def callback_query(call):
             
     
             bot.send_message(call.message.chat.id, 'Пример кода для номера 17:')
-            with open('photos/number17.PNG', 'rb') as photo_1:
+            with open('photos/number17.png', 'rb') as photo_1:
                 bot.send_photo(call.message.chat.id, photo_1)
 
 
@@ -338,7 +338,7 @@ def callback_query(call):
             
     
             bot.send_message(call.message.chat.id, 'Пример кода для номера 23:')
-            with open('photos/number23.PNG', 'rb') as photo_1:
+            with open('photos/number23.png', 'rb') as photo_1:
                 bot.send_photo(call.message.chat.id, photo_1)
 
 
@@ -352,7 +352,7 @@ def callback_query(call):
             
     
             bot.send_message(call.message.chat.id, 'Пример кода для номера 24:')
-            with open('photos/number24.PNG', 'rb') as photo_1:
+            with open('photos/number24.png', 'rb') as photo_1:
                 bot.send_photo(call.message.chat.id, photo_1)
 
 
@@ -366,7 +366,7 @@ def callback_query(call):
             
     
             bot.send_message(call.message.chat.id, 'Пример кода для номера 25:')
-            with open('photos/number25.PNG', 'rb') as photo_1:
+            with open('photos/number25.png', 'rb') as photo_1:
                 bot.send_photo(call.message.chat.id, photo_1)
 
 
@@ -380,7 +380,7 @@ def callback_query(call):
             
     
             bot.send_message(call.message.chat.id, 'Пример кода для номера 27:')
-            with open('photos/number27.PNG', 'rb') as photo_1:
+            with open('photos/number27.png', 'rb') as photo_1:
                 bot.send_photo(call.message.chat.id, photo_1)
 
 
