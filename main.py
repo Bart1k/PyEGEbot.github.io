@@ -611,12 +611,12 @@ def callback_handler(call):
 
 questions = [
     {
-        'image_path': 'photos/number2_2.PNG',  
+        'image_path': 'photos/number2_2.PNG',
         'options': ['dbca', 'bcda', 'abcd', 'dbac'],
         'answer': 'dbca'
     },
     {
-        'image_path': 'photos/number5_5.PNG',  
+        'image_path': 'photos/number5_5.PNG',
         'options': ['29', '21', '13', '28'],
         'answer': '28'
     },
@@ -638,23 +638,23 @@ questions = [
     {
         'image_path': 'photos/number15_15.PNG',
         'options': ['22', '8', '19', '17'],
-        'answer': '19'  
+        'answer': '19'
     },
     {
         'image_path': 'photos/number16_16.PNG',
         'options': ['4094550', '4082612', '4058365', '4184965'],
-        'answer': '4094550'  
+        'answer': '4094550'
     },
     {
         'image_path': 'photos/number17_17.PNG',
         'text_file_path': 'texts/17_17873.txt',
         'options': ['1213 176024', '1214 176024', '1211 166024', '1264 166024'],
-        'answer': '1214 176024' 
+        'answer': '1214 176024'
     },
     {
         'image_path': 'photos/number23_23.PNG',
         'options': ['34', '28', '48', '36'],
-        'answer': '36' 
+        'answer': '36'
     },
     {
         'image_path': 'photos/number25_25.PNG',
@@ -686,31 +686,29 @@ questions = [
     },
     {
         'image_path': 'photos/number27_27.PNG',
-    'text_file_path': [
-        'texts/27_A_17882.txt',
-        'texts/27_B_17882.txt',
-        'texts/27_A_17882.xlsx',
-        'texts/27_B_17882.xlsx'
-    ],
-    'options': [
-        '10738 30730\n'
-        '37522 51277',
-        '10438 30130\n'
-        '37524 51577',
-        '10738 30730\n'
-        '37522 51277',
-        '10731 30630\n'
-        '37522 51277'
-    ],
-    'answer': '10738 30730\n'
-              '37522 51277'
-
-
-
+        'text_file_path': [
+            'texts/27_A_17882.txt',
+            'texts/27_B_17882.txt',
+            'texts/27_A_17882.xlsx',
+            'texts/27_B_17882.xlsx'
+        ],
+        'options': [
+            '10738 30730\n'
+            '37522 51277',
+            '10438 30130\n'
+            '37524 51577',
+            '10738 30730\n'
+            '37522 51277',
+            '10731 30630\n'
+            '37522 51277'
+        ],
+        'answer': '10738 30730\n'
+                  '37522 51277'
     }
 ]
 
-current_question = 0
+
+quiz_states = {}
 
 def send_message(chat_id, text, reply_markup=None):
     bot.send_message(chat_id, text, reply_markup=reply_markup)
@@ -725,61 +723,78 @@ def send_document(chat_id, document_path):
 
 @bot.message_handler(commands=['quiz'])
 def start_quiz(message):
-    global current_question
-    current_question = 0
-    send_message(message.chat.id, "🎉 Добро пожаловать в квиз 'Python для ЕГЭ по информатике'! Отвечайте на вопросы, выбирая один из вариантов. В конце будет разбор данных заданий:)")
-    send_question(message.chat.id)
+    user_id = message.chat.id
+    quiz_states[user_id] = {'current_question': 0, 'quiz_active': True} 
+    send_message(user_id, "🎉 Добро пожаловать в квиз 'Python для ЕГЭ по информатике'! Отвечайте на вопросы, выбирая один из вариантов. В конце будет разбор данных заданий:)")
+    send_question(user_id)
 
 def send_question(chat_id):
-    global current_question
-    if current_question < len(questions):
-        question = questions[current_question]
-        send_photo(chat_id, question['image_path'])
-        if 'text_file_path' in question:
-            if isinstance(question['text_file_path'], list):
-                for text_file_path in question['text_file_path']:
-                    if os.path.exists(text_file_path):
-                        send_document(chat_id, text_file_path)
-            else:
-                if os.path.exists(question['text_file_path']):
-                    send_document(chat_id, question['text_file_path'])
+    user_id = chat_id
+    if user_id in quiz_states and quiz_states[user_id]['quiz_active']:
+        current_question = quiz_states[user_id]['current_question']
 
-        markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
-        for option in question['options']:
-            markup.add(option)
-        send_message(chat_id, "🤔 Выберите ответ:", reply_markup=markup)
-    else:
-        send_message(chat_id, "🤔 Не понимаешь, почему именно такие ответы? Не беда! Посмотри эти стримы, на которых разбираются данные задание и все станет понятно:\n")
-        send_message(chat_id, "🖥️ Задание 2(таймкод - 2:41): https://rutube.ru/video/504082f23e55f518fad8e69aca81cd3e/?t=164&r=plemwd\n"
-                              "🖥️ Задание 5: https://vk.com/video-205865487_456240456\n"
-                              "🖥️ Задание 6: https://vk.com/video-205865487_456240456\n"
-                              "🖥️ Задание 12(таймкод - 36:56): https://rutube.ru/video/504082f23e55f518fad8e69aca81cd3e/?t=2217&r=plemwd\n"
-                              "🖥️ Задание 14(таймкод - 1:37:35): https://vk.com/video-205865487_456239242\n"
-                              "🖥️ Задание 15(таймкод - 1:44:00): https://vk.com/video-205865487_456239242\n"
-                              "🖥️ Задание 16(таймкод - 1:47:35): https://vk.com/video-205865487_456239242\n"
-                              "🖥️ Задание 17(таймкод - 1:50:50): https://vk.com/video-205865487_456239242\n"
-                              "🖥️ Задание 23(таймкод - 2:24:05): https://vk.com/video-205865487_456239242\n"
-                              "🖥️ Задание 24: https://rutube.ru/video/4b79b5333ad048ba11e61dca9cbe47e1/?&utm_source=embed&utm_medium=referral&utm_campaign=logo&utm_content=4b79b5333ad048ba11e61dca9cbe47e1&utm_term=kompege.ru%2F&referrer=appmetrica_tracking_id%3D1037600761300671389%26ym_tracking_id%3D681587340714204735\n"
-                              "🖥️ Задание 25(таймкод - 2:32:25): https://vk.com/video-205865487_456239242\n"
-                              "🖥️ Задание 27(таймкод - 5:00): https://vkvideo.ru/video-205865487_456239242?ref_domain=kompege.ru")
-        send_message(chat_id, "🏁 Квиз завершен! Ты мегахорош, продолжай в том же духе:), нажимай /start, чтоб выбрать другую опцию!")
-        current_question = 0
+        if current_question < len(questions):
+            try:
+                question = questions[current_question]
+                send_photo(chat_id, question['image_path'])
+                if 'text_file_path' in question:
+                    if isinstance(question['text_file_path'], list):
+                        for text_file_path in question['text_file_path']:
+                            if os.path.exists(text_file_path):
+                                send_document(chat_id, text_file_path)
+                    else:
+                        if os.path.exists(question['text_file_path']):
+                            send_document(chat_id, text_file_path)
+
+                markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
+                for option in question['options']:
+                    markup.add(option)
+                send_message(chat_id, "🤔 Выберите ответ:", reply_markup=markup)
+
+            except FileNotFoundError:
+                bot.send_message(chat_id, "❌ Ошибка: Не найден файл для вопроса. Обратитесь к разработчику.")
+            except KeyError:
+                bot.send_message(chat_id, "❌ Ошибка: Некорректная структура данных вопроса. Обратитесь к разработчику.")
+            except Exception as e:
+                bot.send_message(chat_id, f"❌ Ошибка: Произошла непредвиденная ошибка: {e}. Обратитесь к разработчику.")
+
+        else:
+            send_message(chat_id, "🤔 Не понимаешь, почему именно такие ответы? Не беда! Посмотри эти стримы, на которых разбираются данные задание и все станет понятно:\n")
+            send_message(chat_id, "🖥️ Задание 2(таймкод - 2:41): https://rutube.ru/video/504082f23e55f518fad8e69aca81cd3e/?t=164&r=plemwd\n"
+                                  "🖥️ Задание 5: https://vk.com/video-205865487_456240456\n"
+                                  "🖥️ Задание 6: https://vk.com/video-205865487_456240456\n"
+                                  "🖥️ Задание 12(таймкод - 36:56): https://rutube.ru/video/504082f23e55f518fad8e69aca81cd3e/?t=2217&r=plemwd\n"
+                                  "🖥️ Задание 14(таймкод - 1:37:35): https://vk.com/video-205865487_456239242\n"
+                                  "🖥️ Задание 15(таймкод - 1:44:00): https://vk.com/video-205865487_456239242\n"
+                                  "🖥️ Задание 16(таймкод - 1:47:35): https://vk.com/video-205865487_456239242\n"
+                                  "🖥️ Задание 17(таймкод - 1:50:50): https://vk.com/video-205865487_456239242\n"
+                                  "🖥️ Задание 23(таймкод - 2:24:05): https://vk.com/video-205865487_456239242\n"
+                                  "🖥️ Задание 24: https://rutube.ru/video/4b79b5333ad048ba11e61dca9cbe47e1/?&utm_source=embed&utm_medium=referral&utm_campaign=logo&utm_content=4b79b5333ad048ba11e61dca9cbe47e1&utm_term=kompege.ru%2F&referrer=appmetrica_tracking_id%3D1037600761300671389%26ym_tracking_id%3D681587340714204735\n"
+                                  "🖥️ Задание 25(таймкод - 2:32:25): https://vk.com/video-205865487_456239242\n"
+                                  "🖥️ Задание 27(таймкод - 5:00): https://vkvideo.ru/video-205865487_456239242?ref_domain=kompege.ru")
+            send_message(chat_id, "🏁 Квиз завершен! Ты мегахорош, продолжай в том же духе:), нажимай /start, чтоб выбрать другую опцию!")
+            quiz_states[user_id]['quiz_active'] = False  
 
 
 @bot.message_handler(func=lambda message: True)
 def handle_answer(message):
-    global current_question
-    question = questions[current_question]
-    if message.text in question['options']:
-        if message.text == question['answer']:
-            send_message(message.chat.id, "✅ Правильно!")
-            current_question += 1
-            send_question(message.chat.id)
+    user_id = message.chat.id
+    if user_id in quiz_states and quiz_states[user_id]['quiz_active']:
+        current_question = quiz_states[user_id]['current_question']
+        question = questions[current_question]
+
+        if message.text in question['options']:
+            if message.text == question['answer']:
+                send_message(user_id, "✅ Правильно!")
+                quiz_states[user_id]['current_question'] += 1 
+                send_question(user_id)
+            else:
+                send_message(user_id, "❌ Неправильно!")
+                send_question(user_id)
         else:
-            send_message(message.chat.id, "❌ Неправильно!")
-            send_question(message.chat.id)
+            send_message(user_id, "❓ Я не знаю такой функции, нажмите /start!")
     else:
-        send_message(message.chat.id, "❓ Я не знаю такой функции, нажмите /start!")
+         send_message(user_id, "❓ Квиз не запущен! Нажмите /quiz чтобы начать.")
 
 
 feedback_file_path = 'feedback.txt'
