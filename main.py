@@ -647,7 +647,7 @@ questions = [
     },
     {
         'image_path': 'photos/number17_17.PNG',
-        'text_file_path': 'texts/17_17873.txt',
+        'text_file_path': 'texts/17_17873.txt', 
         'options': ['1213 176024', '1214 176024', '1211 166024', '1264 166024'],
         'answer': '1214 176024'
     },
